@@ -1,0 +1,1027 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kazza Nova Planejados | Sorocaba</title>
+  <meta name="description" content="Projetos completos de móveis planejados para cozinhas, dormitórios e ambientes integrados em Sorocaba e região." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Cinzel:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#0a0a0a;
+      --bg-soft:#121212;
+      --bg-card:#171717;
+      --gold:#cda349;
+      --gold-2:#f0d28b;
+      --gold-3:#8f6a25;
+      --text:#f5f1e8;
+      --muted:#cfc7b6;
+      --line:rgba(240,210,139,.18);
+      --shadow:0 18px 50px rgba(0,0,0,.38);
+      --radius:24px;
+      --wa:#25d366;
+      --wa2:#149e35;
+    }
+
+    *{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      font-family:"Inter",sans-serif;
+      background:
+        radial-gradient(circle at top right, rgba(205,163,73,.14), transparent 22%),
+        linear-gradient(180deg, #080808 0%, #101010 100%);
+      color:var(--text);
+      overflow-x:hidden;
+    }
+
+    a{text-decoration:none;color:inherit}
+    img,video{display:block;max-width:100%}
+
+    .container{
+      width:min(1180px, calc(100% - 24px));
+      margin:0 auto;
+    }
+
+    .section{padding:72px 0}
+
+    .tag{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:10px 16px;
+      border-radius:999px;
+      border:1px solid rgba(240,210,139,.18);
+      background:rgba(205,163,73,.08);
+      color:var(--gold-2);
+      font-size:12px;
+      font-weight:800;
+      letter-spacing:.1em;
+      text-transform:uppercase;
+      backdrop-filter:blur(8px);
+    }
+
+    .title-wrap{
+      display:grid;
+      gap:12px;
+      margin-bottom:28px;
+      text-align:center;
+    }
+
+    .title-wrap h2{
+      font-family:"Cinzel",serif;
+      font-size:clamp(28px,4vw,48px);
+      line-height:1.05;
+      color:var(--gold-2);
+    }
+
+    .title-wrap p{
+      max-width:780px;
+      margin:0 auto;
+      color:var(--muted);
+      line-height:1.8;
+      font-size:15px;
+    }
+
+    .btn{
+      border:none;
+      cursor:pointer;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      padding:15px 24px;
+      border-radius:999px;
+      font-weight:800;
+      font-size:14px;
+      transition:.25s ease;
+      white-space:nowrap;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .btn:hover{
+      transform:translateY(-2px);
+    }
+
+    .btn-gold{
+      color:#111;
+      background:linear-gradient(135deg,var(--gold),var(--gold-2));
+      box-shadow:0 16px 34px rgba(205,163,73,.22);
+    }
+
+    .btn-dark{
+      color:var(--text);
+      background:rgba(255,255,255,.06);
+      border:1px solid rgba(255,255,255,.1);
+    }
+
+    .btn-wa{
+      color:white;
+      background:linear-gradient(135deg,var(--wa),var(--wa2));
+      box-shadow:0 14px 30px rgba(37,211,102,.26);
+    }
+
+    /* HEADER */
+    .header{
+      position:sticky;
+      top:0;
+      z-index:100;
+      backdrop-filter:blur(14px);
+      background:rgba(8,8,8,.78);
+      border-bottom:1px solid rgba(240,210,139,.10);
+    }
+
+    .nav{
+      min-height:84px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:18px;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:14px;
+      min-width:0;
+    }
+
+    .brand-logo-wrap{
+      width:60px;
+      height:60px;
+      border-radius:50%;
+      padding:3px;
+      background:linear-gradient(135deg,var(--gold-3),var(--gold-2),var(--gold));
+      box-shadow:0 0 28px rgba(205,163,73,.18);
+      animation:floatLogo 3s ease-in-out infinite;
+      flex:0 0 60px;
+    }
+
+    .brand-logo{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      border-radius:50%;
+      border:2px solid rgba(255,255,255,.08);
+      background:#111;
+    }
+
+    .brand-text{
+      display:grid;
+      line-height:1.1;
+      gap:3px;
+    }
+
+    .brand-text strong{
+      font-family:"Cinzel",serif;
+      font-size:20px;
+      color:var(--gold-2);
+    }
+
+    .brand-text small{
+      font-size:11px;
+      letter-spacing:.16em;
+      text-transform:uppercase;
+      color:#d6c29b;
+      font-weight:700;
+    }
+
+    .menu{
+      display:flex;
+      align-items:center;
+      gap:22px;
+      font-size:14px;
+      font-weight:700;
+      color:#ddd2bd;
+    }
+
+    .menu a{
+      transition:.2s ease;
+    }
+
+    .menu a:hover{
+      color:var(--gold-2);
+    }
+
+    .nav-right{
+      display:flex;
+      align-items:center;
+      gap:12px;
+    }
+
+    .mobile-toggle{
+      display:none;
+      width:46px;
+      height:46px;
+      border:none;
+      border-radius:14px;
+      background:rgba(255,255,255,.06);
+      color:var(--gold-2);
+      font-size:22px;
+      cursor:pointer;
+    }
+
+    /* HERO */
+    .hero{
+      position:relative;
+      padding:54px 0 40px;
+      overflow:hidden;
+    }
+
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1.05fr .95fr;
+      gap:24px;
+      align-items:center;
+    }
+
+    .hero-copy{
+      display:grid;
+      gap:18px;
+    }
+
+    .hero-copy h1{
+      font-family:"Cinzel",serif;
+      font-size:clamp(40px,6vw,74px);
+      line-height:.95;
+      color:var(--gold-2);
+      text-shadow:0 10px 28px rgba(0,0,0,.28);
+    }
+
+    .hero-copy h1 span{
+      color:#fff;
+    }
+
+    .hero-copy p{
+      font-size:16px;
+      line-height:1.85;
+      color:var(--muted);
+      max-width:650px;
+    }
+
+    .hero-list{
+      display:grid;
+      gap:10px;
+    }
+
+    .hero-list li{
+      list-style:none;
+      display:flex;
+      gap:10px;
+      align-items:flex-start;
+      color:#efe5d0;
+      font-weight:600;
+      line-height:1.6;
+    }
+
+    .hero-list li::before{
+      content:"✦";
+      color:var(--gold-2);
+      font-weight:900;
+      margin-top:1px;
+    }
+
+    .hero-actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-top:4px;
+    }
+
+    .hero-media{
+      background:linear-gradient(180deg, rgba(205,163,73,.16), rgba(255,255,255,.04));
+      border:1px solid rgba(240,210,139,.18);
+      border-radius:30px;
+      padding:14px;
+      box-shadow:var(--shadow);
+      position:relative;
+      overflow:hidden;
+    }
+
+    .hero-media::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:radial-gradient(circle at top right, rgba(240,210,139,.14), transparent 30%);
+      pointer-events:none;
+    }
+
+    .hero-media video{
+      width:100%;
+      aspect-ratio:9/16;
+      object-fit:cover;
+      border-radius:22px;
+      background:#000;
+    }
+
+    .hero-badge{
+      position:absolute;
+      left:28px;
+      top:28px;
+      z-index:2;
+      background:rgba(0,0,0,.55);
+      border:1px solid rgba(240,210,139,.18);
+      color:var(--gold-2);
+      padding:10px 14px;
+      border-radius:999px;
+      font-size:12px;
+      font-weight:800;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      backdrop-filter:blur(10px);
+    }
+
+    /* CARDS INFO */
+    .info-grid{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:16px;
+      margin-top:28px;
+    }
+
+    .info-card{
+      background:var(--bg-card);
+      border:1px solid var(--line);
+      border-radius:22px;
+      padding:20px;
+      box-shadow:var(--shadow);
+      display:grid;
+      gap:10px;
+      text-align:center;
+    }
+
+    .info-card .icon{
+      width:54px;
+      height:54px;
+      margin:0 auto;
+      border-radius:50%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:24px;
+      background:linear-gradient(135deg,var(--gold),var(--gold-2));
+      color:#111;
+      box-shadow:0 12px 24px rgba(205,163,73,.16);
+    }
+
+    .info-card strong{
+      font-size:16px;
+      color:var(--gold-2);
+    }
+
+    .info-card span{
+      font-size:14px;
+      color:var(--muted);
+      line-height:1.7;
+    }
+
+    /* DESTAQUE */
+    .featured-wrap{
+      display:grid;
+      grid-template-columns:.92fr 1.08fr;
+      gap:22px;
+      align-items:center;
+    }
+
+    .featured-video{
+      background:var(--bg-card);
+      border:1px solid var(--line);
+      border-radius:28px;
+      padding:14px;
+      box-shadow:var(--shadow);
+    }
+
+    .featured-video video{
+      width:100%;
+      aspect-ratio:9/16;
+      object-fit:cover;
+      border-radius:22px;
+      background:#000;
+    }
+
+    .featured-content{
+      display:grid;
+      gap:16px;
+    }
+
+    .featured-content h3{
+      font-family:"Cinzel",serif;
+      font-size:clamp(28px,4vw,44px);
+      line-height:1.06;
+      color:var(--gold-2);
+    }
+
+    .featured-content p{
+      color:var(--muted);
+      line-height:1.85;
+      font-size:15px;
+    }
+
+    .featured-list{
+      display:grid;
+      gap:10px;
+    }
+
+    .featured-list li{
+      list-style:none;
+      display:flex;
+      gap:10px;
+      align-items:flex-start;
+      line-height:1.7;
+      color:#f3e8d4;
+      font-weight:600;
+    }
+
+    .featured-list li::before{
+      content:"✔";
+      color:var(--gold-2);
+      font-weight:900;
+      margin-top:1px;
+    }
+
+    /* TRABALHOS */
+    .video-gallery{
+      display:grid;
+      grid-template-columns:repeat(5,1fr);
+      gap:16px;
+    }
+
+    .video-card{
+      background:var(--bg-card);
+      border:1px solid var(--line);
+      border-radius:22px;
+      overflow:hidden;
+      box-shadow:var(--shadow);
+      display:grid;
+    }
+
+    .video-card video{
+      width:100%;
+      aspect-ratio:9/16;
+      object-fit:cover;
+      background:#000;
+    }
+
+    .video-card .content{
+      padding:16px;
+      display:grid;
+      gap:8px;
+    }
+
+    .video-card strong{
+      color:var(--gold-2);
+      font-size:15px;
+    }
+
+    .video-card span{
+      color:var(--muted);
+      font-size:13px;
+      line-height:1.65;
+    }
+
+    /* SOBRE / CONTATO */
+    .about-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:20px;
+    }
+
+    .about-card{
+      background:var(--bg-card);
+      border:1px solid var(--line);
+      border-radius:26px;
+      padding:24px;
+      box-shadow:var(--shadow);
+      display:grid;
+      gap:14px;
+    }
+
+    .about-card h3{
+      font-family:"Cinzel",serif;
+      font-size:30px;
+      color:var(--gold-2);
+      line-height:1.05;
+    }
+
+    .about-card p{
+      color:var(--muted);
+      line-height:1.85;
+      font-size:15px;
+    }
+
+    .contact-list{
+      display:grid;
+      gap:10px;
+    }
+
+    .contact-list li{
+      list-style:none;
+      display:flex;
+      gap:10px;
+      align-items:flex-start;
+      color:#f1e6d3;
+      line-height:1.75;
+      font-weight:600;
+    }
+
+    .contact-list li::before{
+      content:"•";
+      color:var(--gold-2);
+      font-size:24px;
+      line-height:1;
+      margin-top:-2px;
+    }
+
+    /* CTA */
+    .cta{
+      background:
+        linear-gradient(135deg, rgba(205,163,73,.16), rgba(255,255,255,.03)),
+        var(--bg-card);
+      border:1px solid var(--line);
+      border-radius:28px;
+      padding:28px;
+      box-shadow:var(--shadow);
+      text-align:center;
+      display:grid;
+      gap:14px;
+    }
+
+    .cta h3{
+      font-family:"Cinzel",serif;
+      font-size:clamp(28px,4vw,42px);
+      color:var(--gold-2);
+      line-height:1.1;
+    }
+
+    .cta p{
+      max-width:760px;
+      margin:0 auto;
+      color:var(--muted);
+      line-height:1.8;
+      font-size:15px;
+    }
+
+    .cta-actions{
+      display:flex;
+      justify-content:center;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-top:6px;
+    }
+
+    /* FOOTER */
+    .footer{
+      padding:44px 0 90px;
+    }
+
+    .footer-grid{
+      border-top:1px solid rgba(240,210,139,.10);
+      padding-top:24px;
+      display:grid;
+      grid-template-columns:1.1fr .9fr .9fr;
+      gap:20px;
+    }
+
+    .footer-box h4{
+      color:var(--gold-2);
+      font-size:18px;
+      margin-bottom:10px;
+    }
+
+    .footer-box p,
+    .footer-box li,
+    .footer-box a{
+      color:var(--muted);
+      line-height:1.9;
+      font-size:14px;
+    }
+
+    .footer-box ul{
+      list-style:none;
+      display:grid;
+      gap:4px;
+    }
+
+    .footer-bottom{
+      border-top:1px solid rgba(240,210,139,.10);
+      margin-top:20px;
+      padding-top:18px;
+      display:flex;
+      justify-content:space-between;
+      gap:12px;
+      flex-wrap:wrap;
+      color:#bda97d;
+      font-size:13px;
+    }
+
+    .whatsapp-float{
+      position:fixed;
+      right:16px;
+      bottom:16px;
+      z-index:120;
+      width:58px;
+      height:58px;
+      border-radius:50%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background:linear-gradient(135deg,var(--wa),var(--wa2));
+      color:white;
+      box-shadow:0 18px 34px rgba(37,211,102,.36);
+      animation:floatBtn 2.8s ease-in-out infinite;
+    }
+
+    .whatsapp-float svg{
+      width:30px;
+      height:30px;
+    }
+
+    @keyframes floatLogo{
+      0%,100%{transform:translateY(0)}
+      50%{transform:translateY(-4px)}
+    }
+
+    @keyframes floatBtn{
+      0%,100%{transform:translateY(0)}
+      50%{transform:translateY(-5px)}
+    }
+
+    @media (max-width: 1100px){
+      .video-gallery{
+        grid-template-columns:repeat(3,1fr);
+      }
+      .info-grid{
+        grid-template-columns:repeat(2,1fr);
+      }
+    }
+
+    @media (max-width: 980px){
+      .menu{
+        position:absolute;
+        top:84px;
+        left:12px;
+        right:12px;
+        background:#111;
+        border:1px solid var(--line);
+        border-radius:20px;
+        padding:16px;
+        display:none;
+        flex-direction:column;
+        align-items:flex-start;
+        box-shadow:var(--shadow);
+      }
+
+      .menu.open{display:flex}
+      .mobile-toggle{display:inline-flex;align-items:center;justify-content:center}
+
+      .hero-grid,
+      .featured-wrap,
+      .about-grid,
+      .footer-grid{
+        grid-template-columns:1fr;
+      }
+    }
+
+    @media (max-width: 760px){
+      .hero{
+        padding-top:34px;
+      }
+
+      .video-gallery{
+        grid-template-columns:1fr;
+      }
+
+      .info-grid{
+        grid-template-columns:1fr;
+      }
+
+      .hero-copy h1{
+        font-size:46px;
+      }
+
+      .hero-media video,
+      .featured-video video{
+        aspect-ratio:9/16;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!--
+    COLOQUE ESTES ARQUIVOS NA PASTA assets/
+
+    logo.jpeg
+    hero.mp4
+    destaque.mp4
+    trabalho-1.mp4
+    trabalho-2.mp4
+    trabalho-3.mp4
+    trabalho-4.mp4
+    trabalho-5.mp4
+  -->
+
+  <header class="header">
+    <div class="container nav">
+      <a href="#inicio" class="brand">
+        <div class="brand-logo-wrap">
+          <img src="assets/logo.jpeg" alt="Logo Kazza Nova Planejados" class="brand-logo">
+        </div>
+        <div class="brand-text">
+          <strong>Kazza Nova</strong>
+          <small>Planejados • Sorocaba</small>
+        </div>
+      </a>
+
+      <div class="nav-right">
+        <nav class="menu" id="menu">
+          <a href="#inicio">Início</a>
+          <a href="#destaque">Destaque</a>
+          <a href="#trabalhos">Trabalhos</a>
+          <a href="#sobre">Sobre</a>
+          <a href="#contato">Contato</a>
+        </nav>
+        <button class="mobile-toggle" onclick="toggleMenu()">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="inicio">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <span class="tag">Móveis planejados em Sorocaba e região</span>
+
+          <h1>
+            Seu espaço com mais <span>elegância</span>, organização e valor.
+          </h1>
+
+          <p>
+            A <strong>Kazza Nova Planejados</strong> desenvolve projetos completos de
+            <strong>móveis planejados para cozinhas, dormitórios e ambientes integrados</strong>,
+            com foco em beleza, funcionalidade e acabamento de alto padrão.
+          </p>
+
+          <ul class="hero-list">
+            <li>Projetos planejados sob medida</li>
+            <li>Atendimento em Sorocaba e região</li>
+            <li>Solicite seu orçamento sem compromisso</li>
+          </ul>
+
+          <div class="hero-actions">
+            <a class="btn btn-wa" href="#" onclick="sendPresetMessage('Hero', 'Quero solicitar um orçamento para móveis planejados.')">Solicitar orçamento</a>
+            <a class="btn btn-gold" href="#trabalhos">Ver trabalhos</a>
+            <a class="btn btn-dark" target="_blank" rel="noopener" href="https://www.instagram.com/kazzanovaplanejados/">Instagram</a>
+          </div>
+        </div>
+
+        <div class="hero-media">
+          <div class="hero-badge">Vídeo principal</div>
+          <video src="assets/hero.mp4" autoplay muted loop playsinline controls></video>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="info-grid">
+          <div class="info-card">
+            <div class="icon">🏠</div>
+            <strong>Ambientes sob medida</strong>
+            <span>Cozinhas, dormitórios e espaços integrados pensados para sua rotina.</span>
+          </div>
+
+          <div class="info-card">
+            <div class="icon">✨</div>
+            <strong>Design elegante</strong>
+            <span>Soluções personalizadas com visual moderno e acabamento sofisticado.</span>
+          </div>
+
+          <div class="info-card">
+            <div class="icon">📐</div>
+            <strong>Melhor aproveitamento</strong>
+            <span>Mais organização e uso inteligente de cada detalhe do espaço.</span>
+          </div>
+
+          <div class="info-card">
+            <div class="icon">💎</div>
+            <strong>Durabilidade</strong>
+            <span>Qualidade superior para valorizar o imóvel e entregar segurança.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="destaque">
+      <div class="container">
+        <div class="title-wrap">
+          <span class="tag">Vídeo em destaque</span>
+          <h2>Transforme seu ambiente com móveis planejados</h2>
+          <p>
+            Um projeto bem planejado melhora o uso do espaço, traz mais praticidade e valoriza o visual do seu ambiente.
+          </p>
+        </div>
+
+        <div class="featured-wrap">
+          <div class="featured-video">
+            <video src="assets/destaque.mp4" controls playsinline></video>
+          </div>
+
+          <div class="featured-content">
+            <h3>Por que escolher móveis planejados?</h3>
+
+            <p>
+              Você merece um ambiente do seu jeito: moderno, organizado e com cada detalhe pensado para facilitar sua vida.
+              A Kazza Nova Planejados trabalha com soluções que unem estética, funcionalidade e qualidade.
+            </p>
+
+            <ul class="featured-list">
+              <li>Custo-benefício inteligente para o seu projeto</li>
+              <li>Valorização do ambiente e do imóvel</li>
+              <li>Mais organização no dia a dia</li>
+              <li>Mais segurança, garantia e durabilidade</li>
+              <li>Acabamento elegante e personalizado</li>
+            </ul>
+
+            <div class="hero-actions">
+              <a class="btn btn-wa" href="#" onclick="sendPresetMessage('Destaque', 'Quero falar sobre um projeto de móveis planejados.')">Fale conosco</a>
+              <a class="btn btn-dark" href="#contato">Mais informações</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="trabalhos">
+      <div class="container">
+        <div class="title-wrap">
+          <span class="tag">Trabalhos feitos</span>
+          <h2>Veja alguns vídeos dos nossos projetos</h2>
+          <p>
+            Adicione aqui os 5 vídeos dos trabalhos realizados para apresentar melhor a qualidade da execução e o estilo dos projetos.
+          </p>
+        </div>
+
+        <div class="video-gallery">
+          <article class="video-card">
+            <video src="assets/trabalho-1.mp4" controls playsinline></video>
+            <div class="content">
+              <strong>Projeto 01</strong>
+              <span>Vídeo de apresentação de ambiente planejado.</span>
+            </div>
+          </article>
+
+          <article class="video-card">
+            <video src="assets/trabalho-2.mp4" controls playsinline></video>
+            <div class="content">
+              <strong>Projeto 02</strong>
+              <span>Solução sob medida com elegância e funcionalidade.</span>
+            </div>
+          </article>
+
+          <article class="video-card">
+            <video src="assets/trabalho-3.mp4" controls playsinline></video>
+            <div class="content">
+              <strong>Projeto 03</strong>
+              <span>Detalhes de acabamento e organização do espaço.</span>
+            </div>
+          </article>
+
+          <article class="video-card">
+            <video src="assets/trabalho-4.mp4" controls playsinline></video>
+            <div class="content">
+              <strong>Projeto 04</strong>
+              <span>Mais valorização e beleza para o ambiente.</span>
+            </div>
+          </article>
+
+          <article class="video-card">
+            <video src="assets/trabalho-5.mp4" controls playsinline></video>
+            <div class="content">
+              <strong>Projeto 05</strong>
+              <span>Mais um exemplo de projeto completo realizado.</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="sobre">
+      <div class="container">
+        <div class="about-grid">
+          <div class="about-card">
+            <h3>Sobre a Kazza Nova</h3>
+            <p>
+              A <strong>Kazza Nova Planejados</strong> atua em <strong>Sorocaba e região</strong> criando projetos completos
+              de móveis planejados para diferentes ambientes, sempre com foco em personalização, sofisticação e melhor uso do espaço.
+            </p>
+            <p>
+              Nossa proposta é transformar ambientes em espaços mais funcionais, bonitos e alinhados ao estilo de cada cliente.
+            </p>
+          </div>
+
+          <div class="about-card" id="contato">
+            <h3>Contato</h3>
+            <ul class="contact-list">
+              <li><strong>WhatsApp:</strong> (15) 99739-9083</li>
+              <li><strong>Instagram:</strong> @kazzanovaplanejados</li>
+              <li><strong>Endereço:</strong> Rua Altinopolis, 412 - Sorocaba - SP</li>
+              <li><strong>Atendimento:</strong> Sorocaba e região</li>
+            </ul>
+
+            <div class="hero-actions">
+              <a class="btn btn-wa" href="#" onclick="sendPresetMessage('Contato', 'Olá, quero solicitar um orçamento sem compromisso.')">Chamar no WhatsApp</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="cta">
+          <h3>Faça seu projeto com quem entende do assunto</h3>
+          <p>
+            Fale conosco e solicite um orçamento sem compromisso. Vamos transformar seu espaço com móveis planejados modernos, funcionais e com acabamento de qualidade.
+          </p>
+
+          <div class="cta-actions">
+            <a class="btn btn-wa" href="#" onclick="sendPresetMessage('CTA Final', 'Quero fazer meu projeto de móveis planejados.')">Pedir orçamento</a>
+            <a class="btn btn-gold" target="_blank" rel="noopener" href="https://www.instagram.com/kazzanovaplanejados/">Ver Instagram</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-box">
+            <h4>Kazza Nova Planejados</h4>
+            <p>Projetos completos de móveis planejados para cozinhas, dormitórios e ambientes integrados.</p>
+          </div>
+
+          <div class="footer-box">
+            <h4>Menu</h4>
+            <ul>
+              <li><a href="#inicio">Início</a></li>
+              <li><a href="#destaque">Destaque</a></li>
+              <li><a href="#trabalhos">Trabalhos</a></li>
+              <li><a href="#sobre">Sobre</a></li>
+              <li><a href="#contato">Contato</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-box">
+            <h4>Informações</h4>
+            <ul>
+              <li>Sorocaba e região</li>
+              <li>Rua Altinopolis, 412</li>
+              <li>WhatsApp: (15) 99739-9083</li>
+              <li>Instagram: @kazzanovaplanejados</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>© 2026 Kazza Nova Planejados - Todos os direitos reservados.</p>
+          <p>Site criado para apresentação e captação de clientes.</p>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <a class="whatsapp-float" href="#" onclick="sendPresetMessage('Botão flutuante', 'Olá, quero solicitar um orçamento para móveis planejados.')" aria-label="WhatsApp">
+    <svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true">
+      <path d="M16.02 3.2A12.68 12.68 0 0 0 5.09 22.3L3.2 28.8l6.68-1.76a12.62 12.62 0 0 0 6.12 1.56h.01A12.7 12.7 0 0 0 16.02 3.2Zm7.47 17.94c-.31.88-1.56 1.62-2.22 1.73-.57.09-1.3.13-2.1-.13-.48-.15-1.1-.35-1.89-.69-3.33-1.44-5.5-4.8-5.67-5.02-.17-.22-1.35-1.8-1.35-3.43 0-1.63.86-2.44 1.16-2.77.3-.33.66-.41.88-.41h.63c.2.01.48-.08.75.57.29.7.98 2.4 1.07 2.57.09.17.15.37.03.59-.11.22-.17.36-.34.56-.17.2-.36.45-.51.61-.17.17-.35.36-.15.71.2.35.88 1.45 1.89 2.35 1.3 1.16 2.39 1.52 2.74 1.69.35.17.55.14.75-.09.2-.23.86-1 1.09-1.35.23-.35.46-.29.78-.17.32.12 2.03.96 2.38 1.13.35.17.58.26.67.4.09.14.09.81-.22 1.69Z"/>
+    </svg>
+  </a>
+
+  <script>
+    const WHATSAPP_NUMBER = "5515997399083";
+
+    function toggleMenu(){
+      const menu = document.getElementById("menu");
+      menu.classList.toggle("open");
+    }
+
+    document.querySelectorAll(".menu a").forEach(link => {
+      link.addEventListener("click", () => {
+        document.getElementById("menu").classList.remove("open");
+      });
+    });
+
+    function sendPresetMessage(origem, interesse){
+      const text =
+`Olá, vim pelo site da Kazza Nova Planejados.
+
+Origem: ${origem}
+Interesse: ${interesse}`;
+
+      window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`, "_blank");
+    }
+  </script>
+</body>
+</html>
