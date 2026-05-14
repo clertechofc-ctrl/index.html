@@ -3,162 +3,223 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kazza Nova Planejados | Sorocaba</title>
-  <meta name="description" content="Projetos completos de móveis planejados para cozinhas, dormitórios e ambientes integrados em Sorocaba e região." />
+
+  <title>Kazza Nova Planejados | Móveis Planejados em Sorocaba</title>
+  <meta name="description" content="Kazza Nova Planejados em Sorocaba. Projetos completos de móveis planejados para cozinhas, dormitórios e ambientes integrados. Solicite seu orçamento pelo WhatsApp." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Cinzel:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
   <style>
     :root{
-      --bg:#0a0a0a;
-      --bg-soft:#121212;
-      --bg-card:#171717;
+      --black:#050505;
+      --black2:#0d0d0f;
+      --black3:#171717;
       --gold:#cda349;
-      --gold-2:#f0d28b;
-      --gold-3:#8f6a25;
-      --text:#f5f1e8;
-      --muted:#cfc7b6;
-      --line:rgba(240,210,139,.18);
-      --shadow:0 18px 50px rgba(0,0,0,.38);
-      --radius:24px;
+      --gold2:#f2d486;
+      --gold3:#8a641d;
+      --white:#ffffff;
+      --text:#f7f1e5;
+      --muted:#c8bfae;
+      --line:rgba(242,212,134,.18);
+      --panel:rgba(255,255,255,.07);
+      --shadow:0 28px 80px rgba(0,0,0,.48);
+      --shadow2:0 16px 38px rgba(0,0,0,.30);
       --wa:#25d366;
       --wa2:#149e35;
     }
 
-    *{margin:0;padding:0;box-sizing:border-box}
-    html{scroll-behavior:smooth}
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
     body{
       font-family:"Inter",sans-serif;
-      background:
-        radial-gradient(circle at top right, rgba(205,163,73,.14), transparent 22%),
-        linear-gradient(180deg, #080808 0%, #101010 100%);
       color:var(--text);
+      background:
+        radial-gradient(circle at 10% 0%, rgba(205,163,73,.16), transparent 26%),
+        radial-gradient(circle at 90% 10%, rgba(242,212,134,.10), transparent 28%),
+        linear-gradient(180deg,#050505 0%,#101010 48%,#050505 100%);
       overflow-x:hidden;
     }
 
-    a{text-decoration:none;color:inherit}
-    img,video{display:block;max-width:100%}
+    a{
+      color:inherit;
+      text-decoration:none;
+    }
+
+    img,
+    video{
+      display:block;
+      max-width:100%;
+    }
+
+    button,
+    input,
+    textarea,
+    select{
+      font-family:inherit;
+    }
 
     .container{
       width:min(1180px, calc(100% - 24px));
       margin:0 auto;
     }
 
-    .section{padding:72px 0}
+    .section{
+      padding:82px 0;
+    }
 
     .tag{
       display:inline-flex;
       align-items:center;
-      gap:8px;
+      gap:9px;
+      width:max-content;
       padding:10px 16px;
       border-radius:999px;
-      border:1px solid rgba(240,210,139,.18);
-      background:rgba(205,163,73,.08);
-      color:var(--gold-2);
+      background:rgba(205,163,73,.12);
+      border:1px solid rgba(242,212,134,.20);
+      color:var(--gold2);
       font-size:12px;
-      font-weight:800;
-      letter-spacing:.1em;
+      font-weight:900;
+      letter-spacing:.12em;
       text-transform:uppercase;
-      backdrop-filter:blur(8px);
+      backdrop-filter:blur(10px);
     }
 
-    .title-wrap{
+    .tag::before{
+      content:"";
+      width:8px;
+      height:8px;
+      border-radius:50%;
+      background:var(--gold);
+      box-shadow:0 0 0 6px rgba(205,163,73,.13);
+    }
+
+    .section-top{
       display:grid;
-      gap:12px;
-      margin-bottom:28px;
+      justify-items:center;
       text-align:center;
+      gap:12px;
+      margin-bottom:30px;
     }
 
-    .title-wrap h2{
+    .section-title{
       font-family:"Cinzel",serif;
-      font-size:clamp(28px,4vw,48px);
+      font-size:clamp(32px,5vw,58px);
       line-height:1.05;
-      color:var(--gold-2);
+      color:var(--gold2);
     }
 
-    .title-wrap p{
-      max-width:780px;
-      margin:0 auto;
+    .section-title span{
+      color:#fff;
+    }
+
+    .section-sub{
+      max-width:820px;
       color:var(--muted);
-      line-height:1.8;
       font-size:15px;
+      line-height:1.85;
     }
 
     .btn{
-      border:none;
-      cursor:pointer;
+      position:relative;
+      overflow:hidden;
       display:inline-flex;
       align-items:center;
       justify-content:center;
       gap:10px;
-      padding:15px 24px;
+      min-height:54px;
+      padding:14px 24px;
+      border:none;
       border-radius:999px;
-      font-weight:800;
+      cursor:pointer;
       font-size:14px;
+      font-weight:900;
+      text-transform:uppercase;
+      letter-spacing:.04em;
       transition:.25s ease;
       white-space:nowrap;
-      position:relative;
-      overflow:hidden;
     }
 
     .btn:hover{
       transform:translateY(-2px);
     }
 
+    .btn::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(120deg, transparent, rgba(255,255,255,.28), transparent);
+      transform:translateX(-130%);
+      transition:.7s ease;
+    }
+
+    .btn:hover::before{
+      transform:translateX(130%);
+    }
+
     .btn-gold{
-      color:#111;
-      background:linear-gradient(135deg,var(--gold),var(--gold-2));
-      box-shadow:0 16px 34px rgba(205,163,73,.22);
+      color:#121212;
+      background:linear-gradient(135deg,var(--gold3),var(--gold),var(--gold2));
+      box-shadow:0 16px 34px rgba(205,163,73,.24);
     }
 
     .btn-dark{
-      color:var(--text);
-      background:rgba(255,255,255,.06);
-      border:1px solid rgba(255,255,255,.1);
+      color:#fff;
+      background:rgba(255,255,255,.07);
+      border:1px solid rgba(255,255,255,.13);
+      backdrop-filter:blur(10px);
     }
 
     .btn-wa{
-      color:white;
+      color:#fff;
       background:linear-gradient(135deg,var(--wa),var(--wa2));
-      box-shadow:0 14px 30px rgba(37,211,102,.26);
+      box-shadow:0 16px 34px rgba(37,211,102,.25);
     }
 
     /* HEADER */
     .header{
       position:sticky;
       top:0;
-      z-index:100;
-      backdrop-filter:blur(14px);
-      background:rgba(8,8,8,.78);
-      border-bottom:1px solid rgba(240,210,139,.10);
+      z-index:1000;
+      background:rgba(5,5,5,.78);
+      backdrop-filter:blur(18px);
+      border-bottom:1px solid rgba(242,212,134,.12);
+      box-shadow:0 12px 28px rgba(0,0,0,.26);
     }
 
     .nav{
-      min-height:84px;
+      min-height:82px;
       display:flex;
       align-items:center;
       justify-content:space-between;
-      gap:18px;
+      gap:16px;
     }
 
     .brand{
       display:flex;
       align-items:center;
-      gap:14px;
+      gap:13px;
       min-width:0;
     }
 
     .brand-logo-wrap{
-      width:60px;
-      height:60px;
+      width:64px;
+      height:64px;
       border-radius:50%;
       padding:3px;
-      background:linear-gradient(135deg,var(--gold-3),var(--gold-2),var(--gold));
-      box-shadow:0 0 28px rgba(205,163,73,.18);
-      animation:floatLogo 3s ease-in-out infinite;
-      flex:0 0 60px;
+      background:linear-gradient(135deg,var(--gold3),var(--gold2),var(--gold));
+      box-shadow:0 0 0 6px rgba(205,163,73,.08), 0 16px 36px rgba(0,0,0,.34);
+      animation:floatLogo 3.5s ease-in-out infinite;
+      flex:0 0 64px;
     }
 
     .brand-logo{
@@ -166,51 +227,52 @@
       height:100%;
       object-fit:cover;
       border-radius:50%;
-      border:2px solid rgba(255,255,255,.08);
       background:#111;
+      border:2px solid rgba(255,255,255,.10);
     }
 
     .brand-text{
       display:grid;
-      line-height:1.1;
       gap:3px;
+      line-height:1;
     }
 
     .brand-text strong{
       font-family:"Cinzel",serif;
-      font-size:20px;
-      color:var(--gold-2);
+      font-size:21px;
+      color:var(--gold2);
+      letter-spacing:-.03em;
     }
 
     .brand-text small{
-      font-size:11px;
+      font-size:10px;
       letter-spacing:.16em;
       text-transform:uppercase;
       color:#d6c29b;
-      font-weight:700;
+      font-weight:900;
+    }
+
+    .menu-wrap{
+      display:flex;
+      align-items:center;
+      gap:14px;
     }
 
     .menu{
       display:flex;
       align-items:center;
-      gap:22px;
-      font-size:14px;
-      font-weight:700;
-      color:#ddd2bd;
+      gap:20px;
     }
 
     .menu a{
+      font-size:14px;
+      font-weight:800;
+      color:#e3dac8;
       transition:.2s ease;
     }
 
     .menu a:hover{
-      color:var(--gold-2);
-    }
-
-    .nav-right{
-      display:flex;
-      align-items:center;
-      gap:12px;
+      color:var(--gold2);
     }
 
     .mobile-toggle{
@@ -219,48 +281,108 @@
       height:46px;
       border:none;
       border-radius:14px;
-      background:rgba(255,255,255,.06);
-      color:var(--gold-2);
-      font-size:22px;
+      background:rgba(255,255,255,.07);
+      color:var(--gold2);
+      font-size:24px;
       cursor:pointer;
     }
 
-    /* HERO */
+    /* HERO COM VÍDEO NO FUNDO */
     .hero{
       position:relative;
-      padding:54px 0 40px;
+      min-height:calc(100vh - 82px);
+      display:flex;
+      align-items:center;
+      overflow:hidden;
+      background:#050505;
+    }
+
+    .hero-video-bg{
+      position:absolute;
+      inset:0;
+      z-index:0;
       overflow:hidden;
     }
 
+    .hero-video-bg video{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      filter:brightness(.42) saturate(1.05) contrast(1.08);
+    }
+
+    .hero-video-bg::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        linear-gradient(90deg, rgba(5,5,5,.94), rgba(5,5,5,.62), rgba(5,5,5,.86)),
+        linear-gradient(180deg, rgba(5,5,5,.20), rgba(5,5,5,.92));
+      pointer-events:none;
+    }
+
+    .hero::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      z-index:1;
+      background:
+        linear-gradient(rgba(242,212,134,.055) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(242,212,134,.04) 1px, transparent 1px);
+      background-size:42px 42px;
+      opacity:.28;
+      pointer-events:none;
+      mask-image:linear-gradient(to bottom, black, transparent 92%);
+    }
+
+    .hero::after{
+      content:"";
+      position:absolute;
+      right:-160px;
+      top:80px;
+      width:520px;
+      height:520px;
+      border-radius:50%;
+      background:radial-gradient(circle, rgba(205,163,73,.24), transparent 65%);
+      z-index:1;
+      pointer-events:none;
+    }
+
     .hero-grid{
+      position:relative;
+      z-index:2;
       display:grid;
       grid-template-columns:1.05fr .95fr;
-      gap:24px;
+      gap:36px;
       align-items:center;
+      padding:98px 0;
     }
 
     .hero-copy{
       display:grid;
       gap:18px;
+      max-width:780px;
     }
 
     .hero-copy h1{
       font-family:"Cinzel",serif;
-      font-size:clamp(40px,6vw,74px);
-      line-height:.95;
-      color:var(--gold-2);
-      text-shadow:0 10px 28px rgba(0,0,0,.28);
+      font-size:clamp(42px,7vw,86px);
+      line-height:.96;
+      color:var(--gold2);
+      text-shadow:0 16px 48px rgba(0,0,0,.36);
     }
 
     .hero-copy h1 span{
+      display:block;
       color:#fff;
     }
 
     .hero-copy p{
-      font-size:16px;
-      line-height:1.85;
-      color:var(--muted);
-      max-width:650px;
+      color:#eee4d2;
+      font-size:clamp(16px,2vw,21px);
+      line-height:1.75;
+      max-width:720px;
+      text-shadow:0 10px 34px rgba(0,0,0,.30);
     }
 
     .hero-list{
@@ -273,14 +395,25 @@
       display:flex;
       gap:10px;
       align-items:flex-start;
-      color:#efe5d0;
-      font-weight:600;
+      color:#f5ebd7;
+      font-size:15px;
       line-height:1.6;
+      font-weight:700;
     }
 
     .hero-list li::before{
-      content:"✦";
-      color:var(--gold-2);
+      content:"✓";
+      width:23px;
+      height:23px;
+      flex:0 0 23px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      border-radius:50%;
+      background:rgba(205,163,73,.16);
+      color:var(--gold2);
+      border:1px solid rgba(242,212,134,.18);
+      font-size:12px;
       font-weight:900;
       margin-top:1px;
     }
@@ -289,113 +422,213 @@
       display:flex;
       flex-wrap:wrap;
       gap:12px;
+      margin-top:6px;
+    }
+
+    .hero-info{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      color:#d8ccb8;
+      font-size:13px;
+      text-transform:uppercase;
+      letter-spacing:.10em;
+      font-weight:900;
       margin-top:4px;
     }
 
-    .hero-media{
-      background:linear-gradient(180deg, rgba(205,163,73,.16), rgba(255,255,255,.04));
-      border:1px solid rgba(240,210,139,.18);
-      border-radius:30px;
-      padding:14px;
-      box-shadow:var(--shadow);
-      position:relative;
-      overflow:hidden;
+    .hero-info b{
+      color:#fff;
     }
 
-    .hero-media::before{
+    .hero-side{
+      justify-self:end;
+      width:min(390px,100%);
+      display:grid;
+      gap:16px;
+    }
+
+    .hero-logo-card{
+      position:relative;
+      padding:24px;
+      border-radius:30px;
+      background:linear-gradient(180deg, rgba(255,255,255,.12), rgba(255,255,255,.055));
+      border:1px solid rgba(255,255,255,.14);
+      backdrop-filter:blur(16px);
+      box-shadow:var(--shadow);
+      text-align:center;
+      display:grid;
+      justify-items:center;
+      gap:16px;
+      overflow:hidden;
+      animation:floatCard 5s ease-in-out infinite;
+    }
+
+    .hero-logo-card::before{
       content:"";
       position:absolute;
-      inset:0;
-      background:radial-gradient(circle at top right, rgba(240,210,139,.14), transparent 30%);
+      inset:-2px;
+      background:radial-gradient(circle at top, rgba(205,163,73,.18), transparent 42%);
       pointer-events:none;
     }
 
-    .hero-media video{
+    .hero-logo-big{
+      width:170px;
+      height:170px;
+      border-radius:50%;
+      padding:5px;
+      background:linear-gradient(135deg,var(--gold3),var(--gold),var(--gold2));
+      box-shadow:0 22px 55px rgba(0,0,0,.35);
+      position:relative;
+      z-index:1;
+    }
+
+    .hero-logo-big img{
       width:100%;
-      aspect-ratio:9/16;
+      height:100%;
       object-fit:cover;
-      border-radius:22px;
-      background:#000;
+      border-radius:50%;
+      border:3px solid rgba(255,255,255,.10);
+      background:#111;
     }
 
-    .hero-badge{
-      position:absolute;
-      left:28px;
-      top:28px;
-      z-index:2;
-      background:rgba(0,0,0,.55);
-      border:1px solid rgba(240,210,139,.18);
-      color:var(--gold-2);
-      padding:10px 14px;
-      border-radius:999px;
-      font-size:12px;
+    .hero-logo-card h3{
+      position:relative;
+      z-index:1;
+      font-family:"Cinzel",serif;
+      font-size:27px;
+      color:var(--gold2);
+      line-height:1.05;
+    }
+
+    .hero-logo-card p{
+      position:relative;
+      z-index:1;
+      color:var(--muted);
+      font-size:14px;
+      line-height:1.75;
+    }
+
+    .mini-stats{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:10px;
+    }
+
+    .mini-stat{
+      border-radius:18px;
+      padding:14px 10px;
+      background:rgba(255,255,255,.08);
+      border:1px solid rgba(255,255,255,.10);
+      text-align:center;
+    }
+
+    .mini-stat strong{
+      display:block;
+      color:var(--gold2);
+      font-size:18px;
+      font-weight:900;
+    }
+
+    .mini-stat span{
+      display:block;
+      margin-top:4px;
+      color:#d0c5b4;
+      font-size:11px;
       font-weight:800;
-      letter-spacing:.08em;
       text-transform:uppercase;
-      backdrop-filter:blur(10px);
+      letter-spacing:.06em;
     }
 
-    /* CARDS INFO */
+    /* VANTAGENS */
     .info-grid{
       display:grid;
       grid-template-columns:repeat(4,1fr);
       gap:16px;
-      margin-top:28px;
     }
 
     .info-card{
-      background:var(--bg-card);
-      border:1px solid var(--line);
-      border-radius:22px;
-      padding:20px;
-      box-shadow:var(--shadow);
+      background:linear-gradient(180deg,rgba(255,255,255,.08),rgba(255,255,255,.045));
+      border:1px solid rgba(255,255,255,.09);
+      border-radius:24px;
+      padding:22px;
+      box-shadow:var(--shadow2);
       display:grid;
-      gap:10px;
+      gap:12px;
       text-align:center;
     }
 
-    .info-card .icon{
-      width:54px;
-      height:54px;
-      margin:0 auto;
+    .info-icon{
+      width:58px;
+      height:58px;
       border-radius:50%;
+      margin:0 auto;
       display:flex;
       align-items:center;
       justify-content:center;
-      font-size:24px;
-      background:linear-gradient(135deg,var(--gold),var(--gold-2));
+      background:linear-gradient(135deg,var(--gold3),var(--gold),var(--gold2));
       color:#111;
-      box-shadow:0 12px 24px rgba(205,163,73,.16);
+      font-size:26px;
+      box-shadow:0 16px 28px rgba(205,163,73,.18);
     }
 
     .info-card strong{
+      color:var(--gold2);
       font-size:16px;
-      color:var(--gold-2);
     }
 
     .info-card span{
-      font-size:14px;
       color:var(--muted);
+      font-size:14px;
       line-height:1.7;
     }
 
-    /* DESTAQUE */
-    .featured-wrap{
+    /* DESTAQUE MAIS BONITO */
+    .featured-section{
+      background:
+        radial-gradient(circle at 78% 8%, rgba(205,163,73,.13), transparent 30%),
+        linear-gradient(180deg,#0c0c0c 0%,#131313 100%);
+      border-top:1px solid var(--line);
+      border-bottom:1px solid var(--line);
+    }
+
+    .featured-shell{
       display:grid;
       grid-template-columns:.92fr 1.08fr;
-      gap:22px;
+      gap:28px;
       align-items:center;
     }
 
-    .featured-video{
-      background:var(--bg-card);
-      border:1px solid var(--line);
-      border-radius:28px;
+    .featured-video-card{
+      position:relative;
       padding:14px;
+      border-radius:30px;
+      background:
+        linear-gradient(180deg,rgba(242,212,134,.16),rgba(255,255,255,.04));
+      border:1px solid rgba(242,212,134,.18);
       box-shadow:var(--shadow);
+      overflow:hidden;
     }
 
-    .featured-video video{
+    .featured-video-card::before{
+      content:"Destaque";
+      position:absolute;
+      top:28px;
+      left:28px;
+      z-index:2;
+      padding:9px 13px;
+      border-radius:999px;
+      background:rgba(0,0,0,.62);
+      color:var(--gold2);
+      border:1px solid rgba(242,212,134,.20);
+      font-size:12px;
+      font-weight:900;
+      text-transform:uppercase;
+      letter-spacing:.10em;
+      backdrop-filter:blur(10px);
+    }
+
+    .featured-video-card video{
       width:100%;
       aspect-ratio:9/16;
       object-fit:cover;
@@ -410,15 +643,19 @@
 
     .featured-content h3{
       font-family:"Cinzel",serif;
-      font-size:clamp(28px,4vw,44px);
+      font-size:clamp(30px,4vw,50px);
       line-height:1.06;
-      color:var(--gold-2);
+      color:var(--gold2);
+    }
+
+    .featured-content h3 span{
+      color:#fff;
     }
 
     .featured-content p{
       color:var(--muted);
-      line-height:1.85;
       font-size:15px;
+      line-height:1.9;
     }
 
     .featured-list{
@@ -431,59 +668,127 @@
       display:flex;
       gap:10px;
       align-items:flex-start;
-      line-height:1.7;
-      color:#f3e8d4;
-      font-weight:600;
+      color:#f4ead6;
+      font-size:15px;
+      font-weight:700;
+      line-height:1.65;
     }
 
     .featured-list li::before{
-      content:"✔";
-      color:var(--gold-2);
+      content:"✦";
+      color:var(--gold2);
       font-weight:900;
       margin-top:1px;
     }
 
-    /* TRABALHOS */
-    .video-gallery{
-      display:grid;
-      grid-template-columns:repeat(5,1fr);
+    /* CARROSSEL DE VÍDEOS */
+    .work-head{
+      display:flex;
+      align-items:flex-end;
+      justify-content:space-between;
       gap:16px;
+      margin-bottom:22px;
     }
 
-    .video-card{
-      background:var(--bg-card);
-      border:1px solid var(--line);
-      border-radius:22px;
-      overflow:hidden;
-      box-shadow:var(--shadow);
+    .work-head-text{
       display:grid;
+      gap:10px;
     }
 
-    .video-card video{
+    .work-head h2{
+      font-family:"Cinzel",serif;
+      font-size:clamp(32px,5vw,56px);
+      line-height:1.05;
+      color:var(--gold2);
+    }
+
+    .work-head h2 span{
+      color:#fff;
+    }
+
+    .work-head p{
+      max-width:760px;
+      color:var(--muted);
+      line-height:1.8;
+      font-size:15px;
+    }
+
+    .slider-controls{
+      display:flex;
+      gap:10px;
+      flex-shrink:0;
+    }
+
+    .slider-btn{
+      width:46px;
+      height:46px;
+      border:none;
+      border-radius:50%;
+      background:rgba(255,255,255,.08);
+      border:1px solid rgba(255,255,255,.12);
+      color:#fff;
+      font-size:24px;
+      cursor:pointer;
+      transition:.2s ease;
+      box-shadow:var(--shadow2);
+    }
+
+    .slider-btn:hover{
+      transform:translateY(-2px);
+      background:rgba(205,163,73,.22);
+    }
+
+    .work-slider{
+      display:grid;
+      grid-auto-flow:column;
+      grid-auto-columns:calc((100% - 64px) / 5);
+      gap:16px;
+      overflow-x:auto;
+      scroll-behavior:smooth;
+      scrollbar-width:none;
+      padding:4px 2px 14px;
+    }
+
+    .work-slider::-webkit-scrollbar{
+      display:none;
+    }
+
+    .work-card{
+      position:relative;
+      overflow:hidden;
+      border-radius:24px;
+      background:linear-gradient(180deg,rgba(255,255,255,.08),rgba(255,255,255,.045));
+      border:1px solid rgba(255,255,255,.09);
+      box-shadow:var(--shadow2);
+    }
+
+    .work-card video{
       width:100%;
       aspect-ratio:9/16;
       object-fit:cover;
       background:#000;
+      display:block;
     }
 
-    .video-card .content{
+    .work-card-content{
       padding:16px;
       display:grid;
       gap:8px;
     }
 
-    .video-card strong{
-      color:var(--gold-2);
+    .work-card-content strong{
+      color:var(--gold2);
       font-size:15px;
+      font-weight:900;
     }
 
-    .video-card span{
+    .work-card-content span{
       color:var(--muted);
       font-size:13px;
       line-height:1.65;
     }
 
-    /* SOBRE / CONTATO */
+    /* SOBRE E CONTATO */
     .about-grid{
       display:grid;
       grid-template-columns:1fr 1fr;
@@ -491,11 +796,11 @@
     }
 
     .about-card{
-      background:var(--bg-card);
-      border:1px solid var(--line);
+      background:linear-gradient(180deg,rgba(255,255,255,.08),rgba(255,255,255,.045));
+      border:1px solid rgba(255,255,255,.09);
       border-radius:26px;
       padding:24px;
-      box-shadow:var(--shadow);
+      box-shadow:var(--shadow2);
       display:grid;
       gap:14px;
     }
@@ -503,8 +808,8 @@
     .about-card h3{
       font-family:"Cinzel",serif;
       font-size:30px;
-      color:var(--gold-2);
-      line-height:1.05;
+      color:var(--gold2);
+      line-height:1.08;
     }
 
     .about-card p{
@@ -523,27 +828,27 @@
       display:flex;
       gap:10px;
       align-items:flex-start;
-      color:#f1e6d3;
-      line-height:1.75;
-      font-weight:600;
+      color:#f0e5cf;
+      font-size:15px;
+      font-weight:700;
+      line-height:1.65;
     }
 
     .contact-list li::before{
       content:"•";
-      color:var(--gold-2);
+      color:var(--gold2);
       font-size:24px;
       line-height:1;
       margin-top:-2px;
     }
 
-    /* CTA */
     .cta{
       background:
-        linear-gradient(135deg, rgba(205,163,73,.16), rgba(255,255,255,.03)),
-        var(--bg-card);
-      border:1px solid var(--line);
-      border-radius:28px;
-      padding:28px;
+        radial-gradient(circle at 80% 10%, rgba(205,163,73,.16), transparent 36%),
+        linear-gradient(135deg,rgba(255,255,255,.09),rgba(255,255,255,.045));
+      border:1px solid rgba(255,255,255,.10);
+      border-radius:30px;
+      padding:30px;
       box-shadow:var(--shadow);
       text-align:center;
       display:grid;
@@ -552,16 +857,16 @@
 
     .cta h3{
       font-family:"Cinzel",serif;
-      font-size:clamp(28px,4vw,42px);
-      color:var(--gold-2);
-      line-height:1.1;
+      font-size:clamp(30px,4vw,46px);
+      color:var(--gold2);
+      line-height:1.08;
     }
 
     .cta p{
-      max-width:760px;
-      margin:0 auto;
       color:var(--muted);
-      line-height:1.8;
+      max-width:780px;
+      margin:0 auto;
+      line-height:1.85;
       font-size:15px;
     }
 
@@ -570,24 +875,25 @@
       justify-content:center;
       flex-wrap:wrap;
       gap:12px;
-      margin-top:6px;
+      margin-top:8px;
     }
 
     /* FOOTER */
     .footer{
       padding:44px 0 90px;
+      background:#050505;
     }
 
     .footer-grid{
-      border-top:1px solid rgba(240,210,139,.10);
-      padding-top:24px;
       display:grid;
       grid-template-columns:1.1fr .9fr .9fr;
-      gap:20px;
+      gap:22px;
+      padding-top:24px;
+      border-top:1px solid rgba(242,212,134,.12);
     }
 
     .footer-box h4{
-      color:var(--gold-2);
+      color:var(--gold2);
       font-size:18px;
       margin-bottom:10px;
     }
@@ -596,25 +902,25 @@
     .footer-box li,
     .footer-box a{
       color:var(--muted);
-      line-height:1.9;
       font-size:14px;
+      line-height:1.8;
     }
 
     .footer-box ul{
       list-style:none;
       display:grid;
-      gap:4px;
+      gap:5px;
     }
 
     .footer-bottom{
-      border-top:1px solid rgba(240,210,139,.10);
-      margin-top:20px;
-      padding-top:18px;
       display:flex;
       justify-content:space-between;
-      gap:12px;
       flex-wrap:wrap;
-      color:#bda97d;
+      gap:12px;
+      margin-top:18px;
+      padding-top:18px;
+      border-top:1px solid rgba(242,212,134,.12);
+      color:#a99a7b;
       font-size:13px;
     }
 
@@ -622,107 +928,160 @@
       position:fixed;
       right:16px;
       bottom:16px;
-      z-index:120;
-      width:58px;
-      height:58px;
+      z-index:1200;
+      width:62px;
+      height:62px;
       border-radius:50%;
       display:flex;
       align-items:center;
       justify-content:center;
       background:linear-gradient(135deg,var(--wa),var(--wa2));
-      color:white;
-      box-shadow:0 18px 34px rgba(37,211,102,.36);
-      animation:floatBtn 2.8s ease-in-out infinite;
+      color:#fff;
+      box-shadow:0 18px 40px rgba(37,211,102,.36);
+      animation:floatLogo 2.8s ease-in-out infinite;
     }
 
     .whatsapp-float svg{
-      width:30px;
-      height:30px;
+      width:32px;
+      height:32px;
     }
 
     @keyframes floatLogo{
       0%,100%{transform:translateY(0)}
-      50%{transform:translateY(-4px)}
-    }
-
-    @keyframes floatBtn{
-      0%,100%{transform:translateY(0)}
       50%{transform:translateY(-5px)}
     }
 
-    @media (max-width: 1100px){
-      .video-gallery{
-        grid-template-columns:repeat(3,1fr);
+    @keyframes floatCard{
+      0%,100%{transform:translateY(0)}
+      50%{transform:translateY(-12px)}
+    }
+
+    @media(max-width:1100px){
+      .work-slider{
+        grid-auto-columns:calc((100% - 32px) / 3);
       }
+
       .info-grid{
         grid-template-columns:repeat(2,1fr);
       }
     }
 
-    @media (max-width: 980px){
+    @media(max-width:980px){
       .menu{
         position:absolute;
-        top:84px;
+        top:82px;
         left:12px;
         right:12px;
-        background:#111;
-        border:1px solid var(--line);
-        border-radius:20px;
-        padding:16px;
         display:none;
         flex-direction:column;
         align-items:flex-start;
+        padding:16px;
+        border-radius:20px;
+        background:#111;
+        border:1px solid var(--line);
         box-shadow:var(--shadow);
       }
 
-      .menu.open{display:flex}
-      .mobile-toggle{display:inline-flex;align-items:center;justify-content:center}
+      .menu.open{
+        display:flex;
+      }
+
+      .mobile-toggle{
+        display:inline-flex;
+        align-items:center;
+        justify-content:center;
+      }
 
       .hero-grid,
-      .featured-wrap,
+      .featured-shell,
       .about-grid,
       .footer-grid{
         grid-template-columns:1fr;
       }
-    }
 
-    @media (max-width: 760px){
-      .hero{
-        padding-top:34px;
+      .hero-grid{
+        text-align:center;
       }
 
-      .video-gallery{
-        grid-template-columns:1fr;
+      .hero-copy{
+        justify-items:center;
+        margin:0 auto;
+      }
+
+      .hero-actions,
+      .hero-info{
+        justify-content:center;
+      }
+
+      .hero-side{
+        justify-self:center;
+      }
+    }
+
+    @media(max-width:760px){
+      .section{
+        padding:62px 0;
+      }
+
+      .hero{
+        min-height:auto;
+      }
+
+      .hero-grid{
+        padding:84px 0 66px;
+      }
+
+      .hero-copy h1{
+        font-size:43px;
+      }
+
+      .hero-copy p{
+        font-size:16px;
+      }
+
+      .hero-actions .btn{
+        width:100%;
+      }
+
+      .hero-side{
+        display:none;
       }
 
       .info-grid{
         grid-template-columns:1fr;
       }
 
-      .hero-copy h1{
-        font-size:46px;
+      .work-head{
+        align-items:flex-start;
+        flex-direction:column;
       }
 
-      .hero-media video,
-      .featured-video video{
-        aspect-ratio:9/16;
+      .work-slider{
+        grid-auto-columns:82%;
+      }
+
+      .featured-video-card video{
+        max-height:620px;
       }
     }
   </style>
 </head>
+
 <body>
 
   <!--
-    COLOQUE ESTES ARQUIVOS NA PASTA assets/
+    Estrutura correta:
 
-    logo.jpeg
-    hero.mp4
-    destaque.mp4
-    trabalho-1.mp4
-    trabalho-2.mp4
-    trabalho-3.mp4
-    trabalho-4.mp4
-    trabalho-5.mp4
+    index.html
+    assets/
+      logo.jpeg
+      hero.mp4
+      destaque.mp4
+      trabalho-1.mp4
+      trabalho-2.mp4
+      trabalho-3.mp4
+      trabalho-4.mp4
+      trabalho-5.mp4
   -->
 
   <header class="header">
@@ -731,13 +1090,14 @@
         <div class="brand-logo-wrap">
           <img src="assets/logo.jpeg" alt="Logo Kazza Nova Planejados" class="brand-logo">
         </div>
+
         <div class="brand-text">
           <strong>Kazza Nova</strong>
           <small>Planejados • Sorocaba</small>
         </div>
       </a>
 
-      <div class="nav-right">
+      <div class="menu-wrap">
         <nav class="menu" id="menu">
           <a href="#inicio">Início</a>
           <a href="#destaque">Destaque</a>
@@ -745,185 +1105,298 @@
           <a href="#sobre">Sobre</a>
           <a href="#contato">Contato</a>
         </nav>
+
         <button class="mobile-toggle" onclick="toggleMenu()">☰</button>
       </div>
     </div>
   </header>
 
   <main id="inicio">
+
+    <!-- HERO COM VÍDEO NO FUNDO -->
     <section class="hero">
+      <div class="hero-video-bg">
+        <video autoplay muted loop playsinline preload="metadata">
+          <source src="assets/hero.mp4" type="video/mp4">
+        </video>
+      </div>
+
       <div class="container hero-grid">
         <div class="hero-copy">
           <span class="tag">Móveis planejados em Sorocaba e região</span>
 
           <h1>
-            Seu espaço com mais <span>elegância</span>, organização e valor.
+            Kazza Nova
+            <span>Planejados</span>
           </h1>
 
           <p>
-            A <strong>Kazza Nova Planejados</strong> desenvolve projetos completos de
-            <strong>móveis planejados para cozinhas, dormitórios e ambientes integrados</strong>,
-            com foco em beleza, funcionalidade e acabamento de alto padrão.
+            Projetos completos de móveis planejados para cozinhas, dormitórios e ambientes integrados.
+            Transforme seu espaço em um ambiente moderno, organizado e com cada detalhe pensado para facilitar sua vida.
           </p>
 
           <ul class="hero-list">
-            <li>Projetos planejados sob medida</li>
-            <li>Atendimento em Sorocaba e região</li>
-            <li>Solicite seu orçamento sem compromisso</li>
+            <li>Aproveitamento total do espaço</li>
+            <li>Design elegante e personalizado</li>
+            <li>Mais organização no dia a dia</li>
+            <li>Durabilidade e qualidade superior</li>
           </ul>
 
           <div class="hero-actions">
-            <a class="btn btn-wa" href="#" onclick="sendPresetMessage('Hero', 'Quero solicitar um orçamento para móveis planejados.')">Solicitar orçamento</a>
-            <a class="btn btn-gold" href="#trabalhos">Ver trabalhos</a>
-            <a class="btn btn-dark" target="_blank" rel="noopener" href="https://www.instagram.com/kazzanovaplanejados/">Instagram</a>
+            <a class="btn btn-wa" href="#" onclick="sendPresetMessage('Hero', 'Quero solicitar um orçamento para móveis planejados.')">
+              Solicitar orçamento
+            </a>
+
+            <a class="btn btn-gold" href="#trabalhos">
+              Ver trabalhos
+            </a>
+
+            <a class="btn btn-dark" target="_blank" rel="noopener" href="https://www.instagram.com/kazzanovaplanejados/">
+              Instagram
+            </a>
+          </div>
+
+          <div class="hero-info">
+            <span><b>Sorocaba e região</b></span>
+            <span>•</span>
+            <span>WhatsApp: (15) 99739-9083</span>
           </div>
         </div>
 
-        <div class="hero-media">
-          <div class="hero-badge">Vídeo principal</div>
-          <video src="assets/hero.mp4" autoplay muted loop playsinline controls></video>
-        </div>
-      </div>
+        <div class="hero-side">
+          <div class="hero-logo-card">
+            <div class="hero-logo-big">
+              <img src="assets/logo.jpeg" alt="Logo Kazza Nova Planejados">
+            </div>
 
-      <div class="container">
-        <div class="info-grid">
-          <div class="info-card">
-            <div class="icon">🏠</div>
-            <strong>Ambientes sob medida</strong>
-            <span>Cozinhas, dormitórios e espaços integrados pensados para sua rotina.</span>
-          </div>
+            <h3>Marcenaria Kazza Nova</h3>
 
-          <div class="info-card">
-            <div class="icon">✨</div>
-            <strong>Design elegante</strong>
-            <span>Soluções personalizadas com visual moderno e acabamento sofisticado.</span>
-          </div>
+            <p>
+              Planejados sob medida para cozinhas, dormitórios e ambientes integrados.
+            </p>
 
-          <div class="info-card">
-            <div class="icon">📐</div>
-            <strong>Melhor aproveitamento</strong>
-            <span>Mais organização e uso inteligente de cada detalhe do espaço.</span>
-          </div>
+            <div class="mini-stats">
+              <div class="mini-stat">
+                <strong>212</strong>
+                <span>Posts</span>
+              </div>
 
-          <div class="info-card">
-            <div class="icon">💎</div>
-            <strong>Durabilidade</strong>
-            <span>Qualidade superior para valorizar o imóvel e entregar segurança.</span>
+              <div class="mini-stat">
+                <strong>1.195</strong>
+                <span>Seguidores</span>
+              </div>
+
+              <div class="mini-stat">
+                <strong>100%</strong>
+                <span>Sob medida</span>
+              </div>
+            </div>
+
+            <a class="btn btn-gold" href="#" onclick="sendPresetMessage('Card da logo', 'Quero falar sobre um projeto planejado.')">
+              Fale conosco
+            </a>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section" id="destaque">
+    <!-- VANTAGENS -->
+    <section class="section">
       <div class="container">
-        <div class="title-wrap">
-          <span class="tag">Vídeo em destaque</span>
-          <h2>Transforme seu ambiente com móveis planejados</h2>
-          <p>
-            Um projeto bem planejado melhora o uso do espaço, traz mais praticidade e valoriza o visual do seu ambiente.
+        <div class="section-top">
+          <span class="tag">Vantagens</span>
+          <h2 class="section-title">Por que fazer <span>móveis planejados?</span></h2>
+          <p class="section-sub">
+            Móveis planejados ajudam a valorizar o ambiente, melhorar a organização e transformar cada espaço em algo mais funcional e bonito.
           </p>
         </div>
 
-        <div class="featured-wrap">
-          <div class="featured-video">
-            <video src="assets/destaque.mp4" controls playsinline></video>
+        <div class="info-grid">
+          <div class="info-card">
+            <div class="info-icon">📐</div>
+            <strong>Aproveitamento total</strong>
+            <span>Cada canto é pensado para usar melhor o espaço disponível.</span>
+          </div>
+
+          <div class="info-card">
+            <div class="info-icon">✨</div>
+            <strong>Design personalizado</strong>
+            <span>Projeto feito de acordo com seu estilo e necessidade.</span>
+          </div>
+
+          <div class="info-card">
+            <div class="info-icon">🏠</div>
+            <strong>Valorização do imóvel</strong>
+            <span>Ambientes planejados deixam sua casa mais bonita e valorizada.</span>
+          </div>
+
+          <div class="info-card">
+            <div class="info-icon">💎</div>
+            <strong>Durabilidade</strong>
+            <span>Mais qualidade, acabamento e resistência para o dia a dia.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- VÍDEO DESTAQUE APÓS O TÍTULO -->
+    <section class="section featured-section" id="destaque">
+      <div class="container">
+        <div class="section-top">
+          <span class="tag">Vídeo em destaque</span>
+          <h2 class="section-title">Veja como um projeto <span>planejado transforma</span></h2>
+          <p class="section-sub">
+            Um ambiente planejado não é só bonito. Ele traz praticidade, organização e aproveitamento inteligente para sua rotina.
+          </p>
+        </div>
+
+        <div class="featured-shell">
+          <div class="featured-video-card">
+            <video controls playsinline preload="metadata">
+              <source src="assets/destaque.mp4" type="video/mp4">
+            </video>
           </div>
 
           <div class="featured-content">
-            <h3>Por que escolher móveis planejados?</h3>
+            <span class="tag">Projeto sob medida</span>
+
+            <h3>
+              Ambientes modernos,
+              <span>organizados e elegantes</span>
+            </h3>
 
             <p>
-              Você merece um ambiente do seu jeito: moderno, organizado e com cada detalhe pensado para facilitar sua vida.
-              A Kazza Nova Planejados trabalha com soluções que unem estética, funcionalidade e qualidade.
+              A Kazza Nova Planejados cria soluções para quem quer transformar o ambiente com móveis sob medida,
+              acabamento sofisticado e melhor aproveitamento de espaço.
             </p>
 
             <ul class="featured-list">
-              <li>Custo-benefício inteligente para o seu projeto</li>
-              <li>Valorização do ambiente e do imóvel</li>
-              <li>Mais organização no dia a dia</li>
-              <li>Mais segurança, garantia e durabilidade</li>
-              <li>Acabamento elegante e personalizado</li>
+              <li>Cozinhas planejadas com melhor aproveitamento</li>
+              <li>Dormitórios e guarda-roupas sob medida</li>
+              <li>Ambientes integrados com visual moderno</li>
+              <li>Projetos pensados para sua rotina</li>
+              <li>Orçamento sem compromisso pelo WhatsApp</li>
             </ul>
 
             <div class="hero-actions">
-              <a class="btn btn-wa" href="#" onclick="sendPresetMessage('Destaque', 'Quero falar sobre um projeto de móveis planejados.')">Fale conosco</a>
-              <a class="btn btn-dark" href="#contato">Mais informações</a>
+              <a class="btn btn-wa" href="#" onclick="sendPresetMessage('Vídeo destaque', 'Vi o vídeo em destaque e quero solicitar um orçamento.')">
+                Quero meu projeto
+              </a>
+
+              <a class="btn btn-dark" href="#trabalhos">
+                Ver mais trabalhos
+              </a>
             </div>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- VÍDEOS DE TRABALHOS PASSANDO PARA O LADO -->
     <section class="section" id="trabalhos">
       <div class="container">
-        <div class="title-wrap">
-          <span class="tag">Trabalhos feitos</span>
-          <h2>Veja alguns vídeos dos nossos projetos</h2>
-          <p>
-            Adicione aqui os 5 vídeos dos trabalhos realizados para apresentar melhor a qualidade da execução e o estilo dos projetos.
-          </p>
+        <div class="work-head">
+          <div class="work-head-text">
+            <span class="tag">Trabalhos feitos</span>
+
+            <h2>
+              Vídeos dos nossos
+              <span>projetos</span>
+            </h2>
+
+            <p>
+              Os vídeos passam automaticamente para o lado. No celular, também dá para arrastar com o dedo ou usar as setas.
+            </p>
+          </div>
+
+          <div class="slider-controls">
+            <button class="slider-btn" onclick="moveSlider(-1)">‹</button>
+            <button class="slider-btn" onclick="moveSlider(1)">›</button>
+          </div>
         </div>
 
-        <div class="video-gallery">
-          <article class="video-card">
-            <video src="assets/trabalho-1.mp4" controls playsinline></video>
-            <div class="content">
+        <div class="work-slider" id="workSlider">
+          <article class="work-card">
+            <video controls playsinline preload="metadata">
+              <source src="assets/trabalho-1.mp4" type="video/mp4">
+            </video>
+            <div class="work-card-content">
               <strong>Projeto 01</strong>
-              <span>Vídeo de apresentação de ambiente planejado.</span>
+              <span>Ambiente planejado com acabamento moderno.</span>
             </div>
           </article>
 
-          <article class="video-card">
-            <video src="assets/trabalho-2.mp4" controls playsinline></video>
-            <div class="content">
+          <article class="work-card">
+            <video controls playsinline preload="metadata">
+              <source src="assets/trabalho-2.mp4" type="video/mp4">
+            </video>
+            <div class="work-card-content">
               <strong>Projeto 02</strong>
-              <span>Solução sob medida com elegância e funcionalidade.</span>
+              <span>Solução sob medida para melhor aproveitamento.</span>
             </div>
           </article>
 
-          <article class="video-card">
-            <video src="assets/trabalho-3.mp4" controls playsinline></video>
-            <div class="content">
+          <article class="work-card">
+            <video controls playsinline preload="metadata">
+              <source src="assets/trabalho-3.mp4" type="video/mp4">
+            </video>
+            <div class="work-card-content">
               <strong>Projeto 03</strong>
-              <span>Detalhes de acabamento e organização do espaço.</span>
+              <span>Mais organização, beleza e funcionalidade.</span>
             </div>
           </article>
 
-          <article class="video-card">
-            <video src="assets/trabalho-4.mp4" controls playsinline></video>
-            <div class="content">
+          <article class="work-card">
+            <video controls playsinline preload="metadata">
+              <source src="assets/trabalho-4.mp4" type="video/mp4">
+            </video>
+            <div class="work-card-content">
               <strong>Projeto 04</strong>
-              <span>Mais valorização e beleza para o ambiente.</span>
+              <span>Detalhes que valorizam o ambiente.</span>
             </div>
           </article>
 
-          <article class="video-card">
-            <video src="assets/trabalho-5.mp4" controls playsinline></video>
-            <div class="content">
+          <article class="work-card">
+            <video controls playsinline preload="metadata">
+              <source src="assets/trabalho-5.mp4" type="video/mp4">
+            </video>
+            <div class="work-card-content">
               <strong>Projeto 05</strong>
-              <span>Mais um exemplo de projeto completo realizado.</span>
+              <span>Projeto completo com estilo e qualidade.</span>
             </div>
           </article>
         </div>
       </div>
     </section>
 
+    <!-- SOBRE -->
     <section class="section" id="sobre">
       <div class="container">
         <div class="about-grid">
           <div class="about-card">
-            <h3>Sobre a Kazza Nova</h3>
+            <span class="tag">Sobre</span>
+
+            <h3>Kazza Nova Planejados</h3>
+
             <p>
-              A <strong>Kazza Nova Planejados</strong> atua em <strong>Sorocaba e região</strong> criando projetos completos
-              de móveis planejados para diferentes ambientes, sempre com foco em personalização, sofisticação e melhor uso do espaço.
+              A Kazza Nova Planejados atua em Sorocaba e região com projetos completos de móveis planejados para cozinhas,
+              dormitórios e ambientes integrados.
             </p>
+
             <p>
-              Nossa proposta é transformar ambientes em espaços mais funcionais, bonitos e alinhados ao estilo de cada cliente.
+              O objetivo é entregar ambientes modernos, organizados e com cada detalhe pensado para facilitar sua vida.
             </p>
+
+            <a class="btn btn-gold" href="#" onclick="sendPresetMessage('Sobre', 'Quero conhecer melhor os projetos da Kazza Nova Planejados.')">
+              Conhecer projetos
+            </a>
           </div>
 
           <div class="about-card" id="contato">
-            <h3>Contato</h3>
+            <span class="tag">Contato</span>
+
+            <h3>Fale conosco</h3>
+
             <ul class="contact-list">
               <li><strong>WhatsApp:</strong> (15) 99739-9083</li>
               <li><strong>Instagram:</strong> @kazzanovaplanejados</li>
@@ -931,36 +1404,47 @@
               <li><strong>Atendimento:</strong> Sorocaba e região</li>
             </ul>
 
-            <div class="hero-actions">
-              <a class="btn btn-wa" href="#" onclick="sendPresetMessage('Contato', 'Olá, quero solicitar um orçamento sem compromisso.')">Chamar no WhatsApp</a>
-            </div>
+            <a class="btn btn-wa" href="#" onclick="sendPresetMessage('Contato', 'Olá, quero solicitar um orçamento sem compromisso.')">
+              Chamar no WhatsApp
+            </a>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- CTA FINAL -->
     <section class="section">
       <div class="container">
         <div class="cta">
           <h3>Faça seu projeto com quem entende do assunto</h3>
+
           <p>
-            Fale conosco e solicite um orçamento sem compromisso. Vamos transformar seu espaço com móveis planejados modernos, funcionais e com acabamento de qualidade.
+            Solicite seu orçamento sem compromisso e transforme seu espaço com móveis planejados modernos,
+            funcionais e com acabamento de qualidade.
           </p>
 
           <div class="cta-actions">
-            <a class="btn btn-wa" href="#" onclick="sendPresetMessage('CTA Final', 'Quero fazer meu projeto de móveis planejados.')">Pedir orçamento</a>
-            <a class="btn btn-gold" target="_blank" rel="noopener" href="https://www.instagram.com/kazzanovaplanejados/">Ver Instagram</a>
+            <a class="btn btn-wa" href="#" onclick="sendPresetMessage('CTA Final', 'Quero fazer meu projeto de móveis planejados.')">
+              Pedir orçamento
+            </a>
+
+            <a class="btn btn-gold" target="_blank" rel="noopener" href="https://www.instagram.com/kazzanovaplanejados/">
+              Ver Instagram
+            </a>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- FOOTER -->
     <footer class="footer">
       <div class="container">
         <div class="footer-grid">
           <div class="footer-box">
             <h4>Kazza Nova Planejados</h4>
-            <p>Projetos completos de móveis planejados para cozinhas, dormitórios e ambientes integrados.</p>
+            <p>
+              Projetos completos de móveis planejados para cozinhas, dormitórios e ambientes integrados em Sorocaba e região.
+            </p>
           </div>
 
           <div class="footer-box">
@@ -1003,8 +1487,7 @@
     const WHATSAPP_NUMBER = "5515997399083";
 
     function toggleMenu(){
-      const menu = document.getElementById("menu");
-      menu.classList.toggle("open");
+      document.getElementById("menu").classList.toggle("open");
     }
 
     document.querySelectorAll(".menu a").forEach(link => {
@@ -1022,6 +1505,40 @@ Interesse: ${interesse}`;
 
       window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`, "_blank");
     }
+
+    const slider = document.getElementById("workSlider");
+    let autoSlide;
+
+    function moveSlider(direction){
+      const amount = Math.min(slider.clientWidth * 0.85, 420);
+      slider.scrollBy({
+        left: amount * direction,
+        behavior: "smooth"
+      });
+    }
+
+    function startAutoSlide(){
+      stopAutoSlide();
+
+      autoSlide = setInterval(() => {
+        slider.scrollLeft += 1.6;
+
+        if(slider.scrollLeft + slider.clientWidth >= slider.scrollWidth - 3){
+          slider.scrollLeft = 0;
+        }
+      }, 16);
+    }
+
+    function stopAutoSlide(){
+      clearInterval(autoSlide);
+    }
+
+    startAutoSlide();
+
+    slider.addEventListener("mouseenter", stopAutoSlide);
+    slider.addEventListener("mouseleave", startAutoSlide);
+    slider.addEventListener("touchstart", stopAutoSlide, { passive:true });
+    slider.addEventListener("touchend", startAutoSlide);
   </script>
 </body>
 </html>
